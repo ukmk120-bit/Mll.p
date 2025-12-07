@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLL — Business & Natural Products</title>
+  <meta name="description" content="MLL — नैसर्गिक उत्पादन, प्रामाणिक व्यवहार आणि दीर्घकालीन बिझनेस रिलेशनशिप." />
+  <style>
+    /* ===== Base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== Header / Navbar ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: #ffffffcc;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 20%, #f97316, #ec4899 45%, #8b5cf6 75%, #0f172a 100%);
+      border: 1px solid #f59e0b;
+      box-shadow:
+        0 0 10px rgba(236,72,153,0.7),
+        0 0 16px rgba(129,140,248,0.6);
+    }
+
+    .brand-text-main {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    .nav-links a:hover {
+      border-color: #e5e7eb;
+      background: #eef2ff;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ===== Layout ===== */
+    main { flex: 1; }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 16px 30px;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6d28d9;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 16px 30px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-left,
+    .hero-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 18px 18px 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg, rgba(59,130,246,0.08), rgba(244,114,182,0.08));
+      border: 1px solid #e5e7eb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+      color: #4b5563;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 4vw, 34px);
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .hero-title span {
+      background: conic-gradient(from 160deg, #f97316, #ec4899, #8b5cf6, #22d3ee, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: #4b5563;
+      max-width: 520px;
+      margin-bottom: 16px;
+    }
+
+    .hero-sub strong {
+      color: #7c2d12;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary, .btn-ghost {
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(135deg, #f97316, #ec4899, #8b5cf6);
+      color: #ffffff;
+      box-shadow:
+        0 10px 26px rgba(236,72,153,0.5),
+        0 0 16px rgba(129,140,248,0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 34px rgba(236,72,153,0.7),
+        0 0 20px rgba(129,140,248,0.7);
+    }
+
+    .btn-ghost {
+      background: #f9fafb;
+      border-color: #e5e7eb;
+      color: #111827;
+    }
+
+    .btn-ghost:hover {
+      background: #eef2ff;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .hero-note strong {
+      color: #111827;
+    }
+
+    /* ===== Hero Card (Right) ===== */
+    .hero-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(244,114,182,0.12), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(59,130,246,0.12), transparent 55%),
+        #ffffff;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: #111827;
+    }
+
+    .status-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #22c55e;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #166534;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(22,163,74,0.8);
+    }
+
+    .hero-list {
+      font-size: 12px;
+      color: #374151;
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .hero-list li::before {
+      content: "• ";
+      color: #f97316;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .metric {
+      padding: 8px;
+      border-radius: 14px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .metric-label {
+      color: #6b7280;
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      font-weight: 700;
+      font-size: 13px;
+      color: #111827;
+    }
+
+    /* ===== Cards / Grids ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 14px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      font-size: 13px;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background:
+        linear-gradient(135deg, rgba(56,189,248,0.12), rgba(244,114,182,0.12));
+      font-size: 11px;
+      color: #111827;
+    }
+
+    .pill + .pill {
+      margin-left: 6px;
+    }
+
+    /* ===== Products ===== */
+    .price {
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: #111827;
+    }
+    .price span {
+      font-size: 11px;
+      font-weight: 400;
+      color: #6b7280;
+    }
+
+    .product-actions {
+      margin-top: 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .btn-small {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 11px;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .btn-small:hover {
+      border-color: #f97316;
+      background: #fff7ed;
+    }
+
+    /* ===== Contact / Form ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    .contact-list {
+      font-size: 13px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-item-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+    }
+
+    .contact-item-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.08);
+    }
+
+    label {
+      font-size: 12px;
+      color: #111827;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #111827;
+      font-size: 13px;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.45);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .form-hint {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .btn-submit {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background:
+        linear-gradient(135deg, #f97316, #ec4899, #8b5cf6);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      justify-self: flex-start;
+      box-shadow:
+        0 10px 26px rgba(236,72,153,0.5),
+        0 0 16px rgba(129,140,248,0.6);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 34px rgba(236,72,153,0.7),
+        0 0 20px rgba(129,140,248,0.7);
+    }
+
+    /* ===== Admin Panel ===== */
+    .admin-panel {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 16px;
+      background: #f9fafb;
+      border: 1px dashed #d1d5db;
+      font-size: 12px;
+      display: none;  /* public साठी hidden */
+    }
+
+    .admin-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .admin-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .admin-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .admin-row-compact {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 8px;
+    }
+
+    @media (max-width: 720px) {
+      .admin-row-compact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .admin-badge {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* ===== छोटं Admin बटन (फक्त admin mode मध्ये) ===== */
+    #admin-toggle {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      z-index: 30;
+      font-size: 10px;
+      opacity: 0.2;
+      cursor: pointer;
+      display: none;
+    }
+    #admin-toggle:hover {
+      opacity: 0.9;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      font-size: 11px;
+      color: #6b7280;
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- ===== Header ===== -->
+    <header>
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-logo"></div>
+          <div>
+            <div class="brand-text-main">MLL</div>
+            <div class="brand-text-sub">Business & Natural Products • विश्वासाने & दर्जाने</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#products">Products</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#about-founder">About</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== Hero Section ===== -->
+      <section class="hero">
+        <div class="hero-left">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>PURE • HYGIENIC • TRUSTED • LOCAL</span>
+          </div>
+          <h1 class="hero-title">
+            <span>MLL</span> —  
+            नैसर्गिक उत्पादन आणि प्रामाणिक बिझनेस रिलेशनशिप.
+          </h1>
+          <p class="hero-sub">
+            दर्जेदार <strong>दुग्धजन्य व नैसर्गिक उत्पादने</strong>,  
+            पारदर्शक व्यवहार आणि वेळेवर supply. Parbhani परिसरात  
+            long-term बिझनेस पार्टनरशिपवर focus.
+          </p>
+
+          <div class="cta-row">
+            <a href="https://wa.me/919765079101?text=Hi%20MLL%2C%20मला%20order%20/%20inquiry%20करायची%20आहे." class="btn-primary">
+              WhatsApp वर Contact करा
+            </a>
+            <a href="#products" class="btn-ghost">
+              Products व डिटेल्स पहा
+            </a>
+          </div>
+          <p class="hero-note">
+            <strong>Real talk:</strong> इथे फोटो पेक्षा जास्त महत्व actual माल आणि commitment ला आहे.
+          </p>
+        </div>
+
+        <!-- Right Side Business Snapshot -->
+        <aside class="hero-card" aria-label="Business snapshot">
+          <div class="hero-card-header">
+            <div>
+              <div style="font-size:13px; font-weight:600;">MLL Business Snapshot</div>
+              <div style="font-size:11px; color:#4b5563;">Supply • Services • Long-term clients</div>
+            </div>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              Orders Open
+            </div>
+          </div>
+
+          <ul class="hero-list">
+            <li>उघडा महादेव मंदिर, परभणी परिसरातून stable operations.</li>
+            <li>Bulk / retail दोन्हीसाठी flexible प्लॅन.</li>
+            <li>Quality आणि timing वर practically फोकस.</li>
+          </ul>
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-label">Years in mindset</div>
+              <div class="metric-value">हसल मोड ON</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Monthly capacity</div>
+              <div class="metric-value">Scale-ready</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Client focus</div>
+              <div class="metric-value">Long-term</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ===== Products Section (Dynamic) ===== -->
+      <section id="products" class="section">
+        <div class="section-header">
+          <div class="section-kicker">PRODUCT PORTFOLIO</div>
+          <h2 class="section-title">आमची प्रमुख उत्पादने</h2>
+          <p class="section-sub">
+            खालील products मधून तुम्ही निवड करून Inquiry / Order साठी contact करू शकता.
+          </p>
+        </div>
+
+        <div id="products-container" class="cards">
+          <!-- JS इथे प्रॉडक्ट कार्ड्स टाकेल -->
+        </div>
+
+        <!-- ===== Admin Panel for Products (फक्त admin साठी) ===== -->
+        <div class="admin-panel">
+          <div class="admin-title">Products Manage Panel (Admin)</div>
+          <div class="admin-grid">
+            <p class="admin-badge">
+              येथे तुम्ही प्रॉडक्टचे नाव, वर्णन, rate बदलू शकता.  
+              डेटा तुमच्या ब्राउझरमध्ये (localStorage) सेव्ह केला जाईल.
+            </p>
+
+            <div class="admin-row">
+              <div class="admin-row-compact">
+                <div>
+                  <label for="admin-name">Product Name</label>
+                  <input id="admin-name" placeholder="उदा. खवा / मावा (Premium)" />
+                </div>
+                <div>
+                  <label for="admin-price">Rate / Price</label>
+                  <input id="admin-price" placeholder="उदा. ₹XXX / किलो" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-row">
+              <div>
+                <label for="admin-desc">Description</label>
+                <textarea id="admin-desc" placeholder="उत्पादनाचे थोडक्यात वर्णन येथे लिहा."></textarea>
+              </div>
+            </div>
+
+            <div class="admin-row">
+              <div>
+                <label for="admin-tags">Tags (optional)</label>
+                <input id="admin-tags" placeholder="उदा. Daily fresh, Bulk ready" />
+                <p class="form-hint">Comma (,) ने वेगळे करून tags लिहा. हे छोटे badges म्हणून दिसतील.</p>
+              </div>
+            </div>
+
+            <div class="admin-actions">
+              <button id="admin-save" class="btn-submit" type="button">Product Add / Update करा</button>
+              <button id="admin-reset" class="btn-small" type="button">Demo products reset करा</button>
+              <span id="admin-status" class="admin-badge"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Why Us Section ===== -->
+      <section id="why-us" class="section">
+        <div class="section-header">
+          <div class="section-kicker">WHY MLL</div>
+          <h2 class="section-title">आम्हालाच का निवडाल?</h2>
+          <p class="section-sub">
+            मार्केटमध्ये सगळेच “service best” म्हणतात; MLL मध्ये focus आहे –  
+            कमी बोलणे, जास्त काम आणि consistent डिलिव्हरी.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>क्वालिटीवर zero compromise</h3>
+            <p>
+              कच्चा माल पासून final product पर्यंत basic पण strong quality checks.  
+              over-promise नाही, practical आणि repeatable standard.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Time-bound Supply</h3>
+            <p>
+              Retail, wholesale किंवा function – ठरलेल्या वेळी material पोहोचवणे हा core commitment.  
+              planning आधी, tension नंतर कमी.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Transparent व्यवहार</h3>
+            <p>
+              clear rate, clear weight, clear payment terms. Hidden charges नाहीत –  
+              जे ठरलं तेच, old-school प्रामाणिकपणा.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Relationship-first mindset</h3>
+            <p>
+              one-time deal पेक्षा long-term काम महत्वाचं.  
+              तुमचा turnover वाढला की MLL चा growth आपोआप होतो – simple logic.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Founder / About Section ===== -->
+      <section id="about-founder" class="section">
+        <div class="section-header">
+          <div class="section-kicker">FOUNDER STORY</div>
+          <h2 class="section-title">MLL मागचा चेहरा – मुंजाजी</h2>
+          <p class="section-sub">
+            Parbhani मधून आलेला, ground level वरून काम पाहणारा आणि  
+            जुन्या values + नवीन thinking एकत्र करून काम करणारा व्यक्ती.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>कौन मुंजाजी?</h3>
+            <p>
+              मुंजाजी – practical उद्योजक, ज्यांना दोन्ही जग समजतं:  
+              offline बिझनेसचे नियम आणि online जगाचे game.  
+              दिवस साधा, पण mindset high-performance. स्वतः शिकून  
+              business, content creation आणि लोकांशी connecting करण्यात active.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>कामाची स्टाईल</h3>
+            <p>
+              “पहिले काम, मग आवाज” असा pattern.  
+              planning साधी, पण execution strong:  
+              – small सुरुवात, पण long-term vision  
+              – ग्राहकांशी सरळ, स्पष्ट आणि respectful व्यवहार  
+              – trust तुटणार नाही याची काळजी  
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Motivation & Content side</h3>
+            <p>
+              बिझनेससोबतच मुंजाजी लोकांना uplift करणारे motivational content तयार करतात.  
+              रोजच्या आयुष्यातील struggle, गावाकडचं practical logic आणि  
+              Gen Z attitude एकत्र करून लोकांना action घ्यायला push करणं – हा core motive.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Vision – MLL पुढे कुठे?</h3>
+            <p>
+              MLL केवळ products पुरतं थांबणार नाही;  
+              idea आहे – natural products, disciplined service आणि  
+              local युवा यांना कामाच्या संधी देत sustainable ecosystem तयार करायचा.  
+              म्हणजे फक्त business नाही, एक सिस्टम – ज्यात सगळ्यांचा फायदा.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Process Section ===== -->
+      <section id="process" class="section">
+        <div class="section-header">
+          <div class="section-kicker">ORDER PROCESS</div>
+          <h2 class="section-title">ऑर्डर कशी चालते?</h2>
+          <p class="section-sub">
+            छोटा किंवा मोठा order असो, process clear ठेवणं हा जुना नियम –  
+            गोंधळ कमी, clarity जास्त.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. Inquiry</h3>
+            <p>
+              WhatsApp / Call वर requirement, quantity, location share करा.  
+              MLL कडून availability + rate clear सांगितला जातो.
+            </p>
+          </article>
+          <article class="card">
+            <h3>2. Confirmation</h3>
+            <p>
+              Date, time, payment terms आणि transport final –  
+              एकदा हो म्हटलं की order lock.
+            </p>
+          </article>
+          <article class="card">
+            <h3>3. Processing</h3>
+            <p>
+              updated schedule नुसार तुमचा माल तयार होतो.  
+              हायजेनिक process आणि योग्य packing हे default आहे.
+            </p>
+          </article>
+          <article class="card">
+            <h3>4. Delivery</h3>
+            <p>
+              ठरलेल्या timing मध्ये dispatch / delivery.  
+              bulk requirement साठी वेगळा प्लान finalize करता येतो.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Contact & Lead Form ===== -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <div class="section-kicker">CONTACT & INQUIRY</div>
+          <h2 class="section-title">इथे Contact करा</h2>
+          <p class="section-sub">
+            खाली basic माहिती fill करा किंवा direct WhatsApp / कॉल करा.  
+            Form भरल्यावर तुमच्या मोबाईलवर WhatsApp open होईल आणि मेसेज ready होईल.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Info -->
+          <div>
+            <div class="contact-list">
+              <div>
+                <div class="contact-item-label">MOBILE / WHATSAPP</div>
+                <div class="contact-item-value">+91-9765079101</div>
+              </div>
+              <div>
+                <div class="contact-item-label">EMAIL</div>
+                <div class="contact-item-value">munjajikute111@gmail.com</div>
+              </div>
+              <div>
+                <div class="contact-item-label">LOCATION</div>
+                <div class="contact-item-value">उघडा महादेव मंदिर, परभणी (महाराष्ट्र)</div>
+              </div>
+              <div>
+                <div class="contact-item-label">BUSINESS HOURS</div>
+                <div class="contact-item-value">सकाळी ८ ते रात्री ९</div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;">
+              <a class="pill" href="https://wa.me/919765079101?text=Hi%20MLL%2C%20मला%20inquiry%20करायची%20आहे.">
+                WhatsApp Direct
+              </a>
+              <span class="pill">
+                Call Support Available
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div>
+            <form onsubmit="handleSubmit(event)">
+              <div>
+                <label for="name">नाव / फर्मचे नाव</label>
+                <input id="name" name="name" required />
+              </div>
+              <div>
+                <label for="phone">मोबाईल नंबर</label>
+                <input id="phone" name="phone" required />
+              </div>
+              <div>
+                <label for="product">उत्पादन</label>
+                <select id="product" name="product">
+                  <option value="खवा / मावा">खवा / मावा</option>
+                  <option value="दूध">दूध</option>
+                  <option value="तूप">तूप</option>
+                  <option value="फुलांची पावडर">फुलांची पावडर</option>
+                  <option value="इतर">इतर</option>
+                </select>
+              </div>
+              <div>
+                <label for="quantity">अंदाजे quantity</label>
+                <input id="quantity" name="quantity" placeholder="उदा. ५० किलो / २०० लिटर" />
+              </div>
+              <div>
+                <label for="message">अधिक माहिती / मेसेज</label>
+                <textarea id="message" name="message" placeholder="आपली requirement थोडक्यात लिहा."></textarea>
+              </div>
+              <p class="form-hint">
+                Submit वर क्लिक केल्यावर WhatsApp वर मेसेज तयार होईल.  
+                Actual order confirm करण्यासाठी तुम्ही किंवा आम्ही chat / call वर तपशील final करू.
+              </p>
+              <button type="submit" class="btn-submit">Inquiry WhatsApp वर पाठवा</button>
+              <p id="form-status" class="form-hint"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> MLL. All rights reserved.</span>
+        <span>MLL — काम शांत, output solid.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- छोटं Admin बटन (फक्त admin मोडमध्ये) -->
+  <div id="admin-toggle" class="pill">Admin</div>
+
+  <script>
+    // Public vs Admin:
+    // Public URL  : https://ukmk120-bit.github.io/Mll-website-/
+    // Admin URL   : https://ukmk120-bit.github.io/Mll-website-/?admin=MLL2025
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdmin = urlParams.get("admin") === "MLL2025";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Contact form – WhatsApp =====
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const product = document.getElementById("product").value;
+      const quantity = document.getElementById("quantity").value.trim();
+      const msg = document.getElementById("message").value.trim();
+
+      const text = encodeURIComponent(
+        `MLL साठी नवीन Inquiry:\n\n` +
+        `नाव: ${name}\n` +
+        `मोबाईल: ${phone}\n` +
+        `उत्पादन: ${product}\n` +
+        `Quantity: ${quantity}\n` +
+        `मेसेज: ${msg}`
+      );
+
+      const url = `https://wa.me/919765079101?text=${text}`;
+      window.location.href = url;
+    }
+
+    // ===== Products Dynamic Logic with localStorage =====
+    const PRODUCTS_KEY = "mllProductsV1";
+    let products = [];
+    let editingIndex = null;
+
+    const productsContainer = document.getElementById("products-container");
+    const nameInput = document.getElementById("admin-name");
+    const priceInput = document.getElementById("admin-price");
+    const descInput = document.getElementById("admin-desc");
+    const tagsInput = document.getElementById("admin-tags");
+    const saveBtn = document.getElementById("admin-save");
+    const resetBtn = document.getElementById("admin-reset");
+    const adminStatus = document.getElementById("admin-status");
+    const adminPanel = document.querySelector(".admin-panel");
+    const adminToggle = document.getElementById("admin-toggle");
+
+    function getDefaultProducts() {
+      return [
+        {
+          name: "खवा / मावा (Premium)",
+          desc:
+            "ताज्या दुधापासून बनवलेला हायजेनिक खवा – मिठाई, बर्फी, पेढे, कलाकंद यासाठी उत्तम.",
+          price: "₹XXX / किलो",
+          tags: ["Daily fresh batch", "Bulk ready"]
+        },
+        {
+          name: "दूध (Retail / Bulk)",
+          desc:
+            "फॅट व SNF लक्षात घेऊन consistent quality – दुकान, sweet mart, आयोजनांसाठी योग्य.",
+          price: "₹XX / लिटर",
+          tags: ["Regular supply", "Quality checked"]
+        },
+        {
+          name: "फुलांची पावडर",
+          desc:
+            "नैसर्गिक फुलांपासून तयार केलेली पावडर – पूजेसाठी, अगरबत्ती, cones इत्यादींसाठी वापर.",
+          price: "₹XX / किलो",
+          tags: ["Natural", "Customization possible"]
+        }
+      ];
+    }
+
+    function loadProducts() {
+      try {
+        const saved = localStorage.getItem(PRODUCTS_KEY);
+        if (saved) {
+          products = JSON.parse(saved);
+        } else {
+          products = getDefaultProducts();
+        }
+      } catch (e) {
+        products = getDefaultProducts();
+      }
+    }
+
+    function saveProducts() {
+      try {
+        localStorage.setItem(PRODUCTS_KEY, JSON.stringify(products));
+      } catch (e) {
+        console.log("localStorage error:", e);
+      }
+    }
+
+    function renderProducts() {
+      productsContainer.innerHTML = "";
+      if (!products.length) {
+        const empty = document.createElement("p");
+        empty.textContent = "सध्या कोणतेही products नाहीत. Admin मोडमधून add करा.";
+        empty.style.fontSize = "13px";
+        empty.style.color = "#6b7280";
+        productsContainer.appendChild(empty);
+        return;
+      }
+
+      products.forEach((p, index) => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const title = document.createElement("h3");
+        title.textContent = p.name || "Unnamed Product";
+
+        const desc = document.createElement("p");
+        desc.textContent = p.desc || "";
+
+        const price = document.createElement("div");
+        price.className = "price";
+        price.innerHTML =
+          (p.price || "") + ' <span>(rate तुम्ही ठरवलेला आहे)</span>';
+
+        card.appendChild(title);
+        card.appendChild(desc);
+        card.appendChild(price);
+
+        if (p.tags && p.tags.length) {
+          const tagsWrapper = document.createElement("div");
+          tagsWrapper.style.marginTop = "6px";
+          p.tags.forEach(tag => {
+            const span = document.createElement("span");
+            span.className = "pill";
+            span.textContent = tag;
+            tagsWrapper.appendChild(span);
+          });
+          card.appendChild(tagsWrapper);
+        }
+
+        // Edit/Delete फक्त admin मोडमध्येच
+        if (isAdmin) {
+          const actions = document.createElement("div");
+          actions.className = "product-actions";
+
+          const editBtn = document.createElement("button");
+          editBtn.className = "btn-small";
+          editBtn.textContent = "Edit";
+          editBtn.dataset.index = index;
+
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "btn-small";
+          deleteBtn.textContent = "Delete";
+          deleteBtn.dataset.index = index;
+          deleteBtn.style.borderColor = "#ef4444";
+
+          actions.appendChild(editBtn);
+          actions.appendChild(deleteBtn);
+          card.appendChild(actions);
+        }
+
+        productsContainer.appendChild(card);
+      });
+    }
+
+    function clearAdminForm() {
+      if (!nameInput) return;
+      nameInput.value = "";
+      priceInput.value = "";
+      descInput.value = "";
+      tagsInput.value = "";
+      editingIndex = null;
+      if (saveBtn) saveBtn.textContent = "Product Add / Update करा";
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener("click", function () {
+        const name = nameInput.value.trim();
+        const price = priceInput.value.trim();
+        const desc = descInput.value.trim();
+        const tagsRaw = tagsInput.value.trim();
+
+        if (!name) {
+          adminStatus.textContent = "पहिले Product Name भरा.";
+          return;
+        }
+
+        const tags = tagsRaw
+          ? tagsRaw.split(",").map(t => t.trim()).filter(Boolean)
+          : [];
+
+        const obj = { name, price, desc, tags };
+
+        if (editingIndex === null) {
+          products.push(obj);
+          adminStatus.textContent = "नवीन product add केला.";
+        } else {
+          products[editingIndex] = obj;
+          adminStatus.textContent = "Product update केला.";
+        }
+
+        saveProducts();
+        renderProducts();
+        clearAdminForm();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        if (!confirm("सगळे सध्याचे products काढून default demo products टाकायचे आहेत?")) return;
+        products = getDefaultProducts();
+        saveProducts();
+        renderProducts();
+        clearAdminForm();
+        adminStatus.textContent = "Demo products reset झाले.";
+      });
+    }
+
+    productsContainer.addEventListener("click", function (e) {
+      const target = e.target;
+      if (target.classList.contains("btn-small")) {
+        const index = Number(target.dataset.index);
+        if (Number.isNaN(index)) return;
+
+        if (target.textContent === "Edit") {
+          const p = products[index];
+          nameInput.value = p.name || "";
+          priceInput.value = p.price || "";
+          descInput.value = p.desc || "";
+          tagsInput.value = (p.tags || []).join(", ");
+          editingIndex = index;
+          saveBtn.textContent = "Product Update करा";
+          adminStatus.textContent = "Edit मोड मध्ये आहे. बदल करून पुन्हा सेव्ह करा.";
+        } else if (target.textContent === "Delete") {
+          if (!confirm("हा product काढायचा आहे?")) return;
+          products.splice(index, 1);
+          saveProducts();
+          renderProducts();
+          clearAdminForm();
+          adminStatus.textContent = "Product delete केला.";
+        }
+      }
+    });
+
+    // ===== Admin toggle फक्त admin मोडमध्ये enable =====
+    if (adminToggle) {
+      if (isAdmin) {
+        adminToggle.style.display = "block";
+        adminToggle.addEventListener("click", function () {
+          const code = prompt("Admin code टाका:");
+          // secret code इथे: 9765
+          if (code === "9765") {
+            adminPanel.style.display = "block";
+            adminStatus.textContent = "Admin mode ON.";
+          } else if (code !== null) {
+            alert("Wrong code.");
+          }
+        });
+      } else {
+        adminToggle.style.display = "none";
+      }
+    }
+
+    // Init
+    loadProducts();
+    renderProducts();
+  </script>
+</body>
+</html>
